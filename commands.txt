@@ -1,0 +1,25 @@
+az login
+az group create --name demoaci --location centralindia
+az acr create --resource-group demoaci --name demoacirepo --sku Basic
+az acr login --name demoacirepo
+az acr update -n demoacirepo --admin-enabled true
+docker-compose up --build -d
+docker images
+docker ps
+docker-compose down
+docker-compose push
+az acr repository show --name demoacirepo --repository demo-ui
+docker login azure
+docker context create aci myacicontext
+docker context ls
+docker context use myacicontext
+docker compose up
+docker ps
+
+git init
+git add README.md
+git add -A
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Nikhil8bph/deployment.git
+git push -u origin main

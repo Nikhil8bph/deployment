@@ -1,0 +1,11 @@
+<div class="container" >
+    <h2>Add User</h2>
+    <form (ngSubmit)="addUserformsubmit()">          
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" required [(ngModel)]="user.name" name="name" required>
+        </div>     
+        <button type="submit" class="btn btn-success" style="margin-top: 2%;" >Submit</button>&nbsp;&nbsp;
+        <button type="submit" class="btn btn-primary" style="margin-top: 2%;" (click)="gotolist()">BACK</button>             
+    </form>
+</div>

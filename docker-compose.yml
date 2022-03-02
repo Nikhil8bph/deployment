@@ -1,0 +1,23 @@
+version: '2'
+services:
+  #Back-end Spring Boot Application
+  demo-app:
+    build: ./demo-app
+    container_name: demo-app
+    restart: on-failure
+    ports:
+      - 8081:8081 # Forward the exposed port 8081 on the container to port 8081 on the host machine
+    image: demoacirepo.azurecr.io/demo-app
+
+  #Fron-end Angular Application
+  demo-ui:
+    build: ./demo-ui
+    container_name: demo-ui
+    restart: on-failure
+    ports:
+      - 80:80
+    links:
+      - demo-app
+    depends_on:
+      - demo-app
+    image: demoacirepo.azurecr.io/demo-ui

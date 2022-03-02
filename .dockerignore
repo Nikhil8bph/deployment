@@ -1,0 +1,12 @@
+.git
+.firebase
+.editorconfig
+/node_modules
+/e2e
+/docs
+.vscode
+.angular
+.gitignore
+*.zip
+*.md
+*-lock.json
